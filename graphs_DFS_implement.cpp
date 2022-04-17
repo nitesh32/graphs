@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-long long n,i;
+long long n;
 string s;
 typedef long long ll;
 #define nit( i, n) for(i=0;i<n;i++)
@@ -12,7 +12,7 @@ bool isprime(int x) { for (int d = 2; d * d <= x; d++) { if (x % d == 0) return 
 void func(int** ed,ll n,ll st,int* vi){
     cout<<st<<" ";
     vi[st]=1;
-    for(i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
         if(i==st){
             continue;
         }
@@ -32,20 +32,20 @@ freopen("out.txt","w",stdout);
     ll e;
     cin>>n>>e;
     int** ed=new int*[n];
-    for(i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
         ed[i]=new int[n];
         for(ll j=0;j<n;j++){
             ed[i][j]=0;
         }
     }
-    for(i=0;i<e;i++){
+    for(ll i=0;i<e;i++){
         ll a,b;
         cin>>a>>b;
         ed[a][b]=1;
         ed[b][a]=1;
     }
     int* visited = new int[n];
-    for(i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
         visited[i]=0;
     }
     func(ed,n,0,visited);
