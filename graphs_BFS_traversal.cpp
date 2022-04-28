@@ -36,8 +36,11 @@ void solve(int** ed,int st,ll n,int* visit){
 int main(){
 #ifndef ONLINE_JUDGE
 freopen("ipt.txt","r",stdin);
-freopen("out.txt","w",stdout);
+freopen("ou.txt","w",stdout);
 #endif
+    ll t;
+    cin>>t;
+    while(t--){
     ll e;
     cin>>n>>e;
     int** ed = new int*[n];
@@ -58,9 +61,13 @@ freopen("out.txt","w",stdout);
     for(i=0;i<n;i++){
         visit[i]=0;
     }
-    for(i=0;i<n;i++){
+    ll f=0;
+    for(int i=0;i<n;i++){
     if(visit[i]!=1)
     solve(ed,i,n,visit);
     }
+    
+    }
+
 return 0;
 }
