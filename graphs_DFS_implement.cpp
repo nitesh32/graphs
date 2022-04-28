@@ -16,10 +16,7 @@ void func(int** ed,ll n,ll st,int* vi){
         if(i==st){
             continue;
         }
-        if(ed[st][i]==1){
-            if(vi[i]==1){
-                continue;
-            }
+        if(ed[st][i]==1&&vi[i]!=1){
             func(ed,n,i,vi);
         }
     }
